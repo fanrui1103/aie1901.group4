@@ -677,71 +677,71 @@
         </div>
         
         <div id="analysis" class="tab-content hidden">
-            <h2>数据分析</h2>
+            <h2 data-i18n="dataAnalysis.title">数据分析</h2>
             
             <div class="form-group">
-                <label>数据输入方式</label>
+                <label data-i18n="dataAnalysis.inputMethod">数据输入方式</label>
                 <div>
-                    <label><input type="radio" name="data-input-method" id="data-input-method" value="distribution" checked> 使用分布生成数据</label>
-                    <label><input type="radio" name="data-input-method" id="data-input-method" value="file" style="margin-left: 20px;"> 上传CSV文件</label>
-                    <label><input type="radio" name="data-input-method" id="data-input-method" value="ai" style="margin-left: 20px;"> AI生成数据</label>
+                    <label><input type="radio" name="data-input-method" id="data-input-method" value="distribution" checked> <span data-i18n="dataAnalysis.useDistribution">使用分布生成数据</span></label>
+                    <label><input type="radio" name="data-input-method" id="data-input-method" value="file" style="margin-left: 20px;"> <span data-i18n="dataAnalysis.uploadFile">上传CSV文件</span></label>
+                    <label><input type="radio" name="data-input-method" id="data-input-method" value="ai" style="margin-left: 20px;"> <span data-i18n="dataAnalysis.aiGenerate">AI生成数据</span></label>
                 </div>
             </div>
             
             <div id="file-data-input" class="form-group hidden">
-                <label for="file-upload">上传CSV文件</label>
+                <label for="file-upload" data-i18n="dataAnalysis.uploadCSV">上传CSV文件</label>
                 <input type="file" id="file-upload" accept=".csv">
-                <p class="help-text" style="font-size: 12px; color: var(--text-secondary); margin-top: 5px;">支持CSV格式，每行一个数据或逗号分隔的数据。</p>
+                <p class="help-text" style="font-size: 12px; color: var(--text-secondary); margin-top: 5px;" data-i18n="dataAnalysis.csvHelp">支持CSV格式，每行一个数据或逗号分隔的数据。</p>
             </div>
             
             <div id="ai-data-input" class="form-group hidden">
-                <label for="ai-data-description">数据描述</label>
-                <textarea id="ai-data-description" rows="3" placeholder="请描述您想要的数据特征，例如：生成1000个模拟股票价格数据，呈现一定的趋势和波动性"></textarea>
+                <label for="ai-data-description" data-i18n="dataAnalysis.aiDescription">数据描述</label>
+                <textarea id="ai-data-description" rows="3" data-i18n-placeholder="dataAnalysis.aiDescriptionPlaceholder" placeholder="请描述您想要的数据特征，例如：生成1000个模拟股票价格数据，呈现一定的趋势和波动性"></textarea>
                 <div class="form-row">
                     <div class="form-group" style="flex: 1; margin-right: 10px;">
-                        <label for="ai-data-count">数据点数量</label>
+                        <label for="ai-data-count" data-i18n="dataAnalysis.dataPointCount">数据点数量</label>
                         <input type="number" id="ai-data-count" min="100" max="10000" value="1000">
                     </div>
                     <div class="form-group" style="flex: 1;">
-                        <label for="ai-data-seed">随机种子（可选）</label>
+                        <label for="ai-data-seed" data-i18n="dataAnalysis.randomSeed">随机种子（可选）</label>
                         <input type="number" id="ai-data-seed" min="0" max="999999">
                     </div>
                 </div>
-                <button id="generate-ai-data" class="btn btn-primary">生成AI数据</button>
-                <p class="help-text" style="font-size: 12px; color: var(--text-secondary); margin-top: 5px;">基于您的描述，系统将生成符合特征的模拟数据。</p>
+                <button id="generate-ai-data" class="btn btn-primary" data-i18n="dataAnalysis.generateAIData">生成AI数据</button>
+                <p class="help-text" style="font-size: 12px; color: var(--text-secondary); margin-top: 5px;" data-i18n="dataAnalysis.aiDataHelp">基于您的描述，系统将生成符合特征的模拟数据。</p>
             </div>
             
             <div class="form-group">
-                    <label for="chart-type">图表类型</label>
+                    <label for="chart-type" data-i18n="chart.type">图表类型</label>
                     <select id="chart-type">
-                        <option value="histogram">直方图</option>
-                        <option value="bar">条形图</option>
-                        <option value="scatter">散点图</option>
-                        <option value="line">折线图</option>
+                        <option value="histogram" data-i18n="chart.histogram">直方图</option>
+                        <option value="bar" data-i18n="chart.bar">条形图</option>
+                        <option value="scatter" data-i18n="chart.scatter">散点图</option>
+                        <option value="line" data-i18n="chart.line">折线图</option>
                     </select>
                 </div>
             
             <div class="button-group">
-                <button id="analyze-data">分析数据</button>
-                <button id="reset-analysis" class="secondary">重置分析</button>
+                <button id="analyze-data" data-i18n="dataAnalysis.analyzeData">分析数据</button>
+                <button id="reset-analysis" class="secondary" data-i18n="dataAnalysis.resetAnalysis">重置分析</button>
             </div>
             
             <!-- 参数估计方法选择 -->
             <div id="parameter-estimation" class="form-group">
-                <h3>参数估计</h3>
+                <h3 data-i18n="parameterEstimation.title">参数估计</h3>
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <label for="estimation-method">估计方法:</label>
+                    <label for="estimation-method" data-i18n="parameterEstimation.method">估计方法:</label>
                     <select id="estimation-method">
-                        <option value="mom">矩估计法(MOM)</option>
-                        <option value="mle">最大似然估计法(MLE)</option>
+                        <option value="mom" data-i18n="parameterEstimation.mom">矩估计法(MOM)</option>
+                        <option value="mle" data-i18n="parameterEstimation.mle">最大似然估计法(MLE)</option>
                     </select>
-                    <button id="reestimate-btn" class="btn btn-secondary">重新估计参数</button>
+                    <button id="reestimate-btn" class="btn btn-secondary" data-i18n="parameterEstimation.reestimate">重新估计参数</button>
                 </div>
             </div>
             
             <!-- 参数估计结果 -->
             <div id="parameter-estimation-results" class="stats-container hidden">
-                <h3>参数估计结果</h3>
+                <h3 data-i18n="parameterEstimation.results">参数估计结果</h3>
                 <div id="estimation-results-grid" class="stats-grid"></div>
             </div>
             
